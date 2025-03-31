@@ -9,7 +9,9 @@ const Header = ({ isLoggedIn, handleLogout }) => {
                 <div className={styles.logo}>
                     <img src={phonelogo} alt="musicartLogo" />
                 </div>
-                <p className={styles.number}>912121131313</p>
+                <a href="tel:919307569916" className={styles.number}>
+                    91-9307569916
+                </a>
             </div>
 
             <div className={styles.btns}>
@@ -18,7 +20,17 @@ const Header = ({ isLoggedIn, handleLogout }) => {
                 <p>Shop Now</p>
             </div>
             {isLoggedIn ? (
-                <div className={styles.btns}>
+                <div className={styles.btns}     onClick={() => {
+                    // Clear local storage or session storage
+                    localStorage.removeItem("auth");
+                    localStorage.removeItem("dotusdt");
+                    localStorage.removeItem("ethusdt");
+                    localStorage.removeItem("userName");
+                    localStorage.removeItem("userId");
+            
+                    // Redirect user to login page (if using React Router)
+                    window.location.href = "/"; 
+                }}>
                     Logout
                 </div>
             ) : (

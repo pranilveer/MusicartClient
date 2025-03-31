@@ -58,12 +58,15 @@ const Navbar = ({ isLoggedIn, userName, cartItemCount, handleLogout }) => {
                         </div>
                     </div>
                     <div className={style.navLinks}>
-                        <div className={style.cartLogo}>
-                            <IoCartOutline className={style.cartIcon} />
-                            <Link to="/cart" className={style.linkstyle}>
-                                View Cart {cartItemCount}
-                            </Link>
-                        </div>
+                        {isLoggedIn && userName && (
+                            <div className={style.cartLogo}>
+                                <IoCartOutline className={style.cartIcon} />
+                                <Link to="/cart" className={style.linkstyle}>
+                                    View Cart {cartItemCount}
+                                </Link>
+                            </div>
+                        )}
+
                         <div className={style.userContainer}>
 
                             {isLoggedIn && userName && (
