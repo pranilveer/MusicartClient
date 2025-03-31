@@ -65,16 +65,12 @@ const Navbar = ({ isLoggedIn, userName, cartItemCount, handleLogout }) => {
                             </Link>
                         </div>
                         <div className={style.userContainer}>
-                            <div
-                                className={style.userInitial}
-                                onClick={handleDropdownToggle}
-                            >
-                                {isLoggedIn && userName && (
-                                    <h3>
-                                        {getInitials(userName).toUpperCase()}
-                                    </h3>
-                                )}
-                            </div>
+
+                            {isLoggedIn && userName && (
+                                <div className={style.userInitial} onClick={handleDropdownToggle}>
+                                    <h3>{getInitials(userName).toUpperCase()}</h3>
+                                </div>
+                            )}
                             {dropdownOpen && isLoggedIn && (
                                 <div className={style.dropdownContent}>
                                     <p>{userName}</p>

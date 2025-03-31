@@ -115,7 +115,7 @@ const Home = ({
       }
     };
     fetchProducts();
-  }, [productItems]);
+  }, []);
 
   return (
     <div className={style.HomeContainer}>

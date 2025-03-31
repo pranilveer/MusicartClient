@@ -2,12 +2,12 @@ import React from "react";
 import style from "../../pages/Home/Home.module.css";
 
 import gridIcon from "../../assets/images/grid1.png";
-import gridIcon2 from "../../assets/images/grid2.png";
+// import gridIcon2 from "../../assets/images/grid2.png";
 import listIcon from "../../assets/images/list1.png";
-import listIcon2 from "../../assets/images/list2.png";
+// import listIcon2 from "../../assets/images/list2.png";
 
-import { IoGridOutline } from "react-icons/io5";
-import { FaThList } from "react-icons/fa";
+// import { IoGridOutline } from "react-icons/io5";
+// import { FaThList } from "react-icons/fa";
 
 const FilterandSort = ({
   selectedHeadphoneType,
