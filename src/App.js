@@ -50,7 +50,7 @@ function App() {
     localStorage.removeItem('userName');
     localStorage.removeItem("authToken");
     delete axios.defaults.headers.common["Authorization"];
-    navigate("/login");
+    navigate("/");
   };
 
   const handleLogin = (user, token) => {

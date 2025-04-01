@@ -5,6 +5,7 @@ import phonelogo from "../../assets/logos/phonelogo.svg"
 const Header = ({ isLoggedIn, handleLogout }) => {
     return (
         <header className={styles.container}>
+            <div className={styles.headerbody}>
             <div className={styles.contact}>
                 <div className={styles.logo}>
                     <img src={phonelogo} alt="musicartLogo" />
@@ -20,17 +21,7 @@ const Header = ({ isLoggedIn, handleLogout }) => {
                 <p>Shop Now</p>
             </div>
             {isLoggedIn ? (
-                <div className={styles.btns}     onClick={() => {
-                    // Clear local storage or session storage
-                    localStorage.removeItem("auth");
-                    localStorage.removeItem("dotusdt");
-                    localStorage.removeItem("ethusdt");
-                    localStorage.removeItem("userName");
-                    localStorage.removeItem("userId");
-            
-                    // Redirect user to login page (if using React Router)
-                    window.location.href = "/"; 
-                }}>
+                <div className={styles.btns} onClick={() => {handleLogout()}}>
                     Logout
                 </div>
             ) : (
@@ -44,6 +35,7 @@ const Header = ({ isLoggedIn, handleLogout }) => {
                     </Link>
                 </div>
             )}
+            </div>
         </header >
     );
 };
