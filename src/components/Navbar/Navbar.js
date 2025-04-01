@@ -5,6 +5,7 @@ import style from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
+
 const Navbar = ({ isLoggedIn, userName, cartItemCount, handleLogout }) => {
     const location = useLocation();
     const { pathname } = location;
@@ -59,12 +60,14 @@ const Navbar = ({ isLoggedIn, userName, cartItemCount, handleLogout }) => {
                     </div>
                     <div className={style.navLinks}>
                         {isLoggedIn && userName && (
-                            <div className={style.cartLogo}>
+                            <button class={style.pushable}>
+                                <span class={style.front}>
                                 <IoCartOutline className={style.cartIcon} />
                                 <Link to="/cart" className={style.linkstyle}>
                                     View Cart {cartItemCount}
                                 </Link>
-                            </div>
+                                </span>
+                            </button>
                         )}
 
                         <div className={style.userContainer}>

@@ -39,6 +39,7 @@ body {
 .linkstyle {
     color: white;
     text-decoration: none;
+    font-size: 1.1em;
 }
 
 .linkinvoice {
@@ -46,18 +47,34 @@ body {
     text-decoration: none;
 }
 
-.cartLogo {
-    background: #1D7000;
-    color: white;
-    padding: 6px 20px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-around;
-    font-size: 14px;
-}
-
 .cartIcon {
     font-size: 20px;
+    margin-right: 10px;
+}
+
+.pushable {
+    background: hsl(111, 91%, 17%);
+    border-radius: 20px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    padding-top: 4px;
+}
+
+.front {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 1em;
+    background: #1d7000;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.pushable:active .front {
+    transform: translateY(-2px);
 }
 
 .musiclogo {
@@ -79,6 +96,16 @@ body {
 .userInitial {
     display: flex;
     align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: transform 0.3s ease-in-out;
+}
+
+.userInitial > h3{
+    font-size: 1.3rem;
+}
+
+.userInitial:hover {
+    transform: scale(1.1);
 }
 
 .navbar {
@@ -104,7 +131,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-right: 3rem;
     width: 12rem;
 }
 
@@ -121,9 +147,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-
-
 }
 
 .linksRight h4 {
@@ -300,9 +323,7 @@ body {
     row-gap: 10px;
 }
 
-cartLogo
-
-.carticon {
+cartLogo .carticon {
     font-size: 20px;
     position: relative;
     right: 30px;
@@ -655,4 +676,3 @@ cartLogo
         display: none;
     }
 }
-
