@@ -202,6 +202,7 @@ body {
   justify-content: space-between;
   margin-top: 40px;
   border-radius: 10px;
+  min-width: 280px;
 }
 
 .Banner h2 {
@@ -371,6 +372,12 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
+@media screen and (max-width: 876px) {
+  .Banner h2 {
+    font-size: 35px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   body {
     margin: 0;
@@ -416,10 +423,11 @@ body {
     padding: 6px 30px;
     background: #2e0052;
     color: white;
-    border-radius: 20px;
+    border-radius: 10px;
     outline: none;
     border: none;
     font-size: 12px;
+    cursor: pointer;
   }
 
   .searchBar {
@@ -553,5 +561,29 @@ body {
     padding: 10px;
     cursor: pointer;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media screen and (max-width: 371px) {
+  .Banner h2 {
+    font-size: 15px;
+  }
+
+  .BannerContent button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .Banner h2 {
+    font-size: 12px;
+  }
+
+  .BannerContent button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 10px;
   }
 }
