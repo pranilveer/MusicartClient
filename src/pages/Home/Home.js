@@ -48,8 +48,12 @@ const Home = ({
     setIsModalOpen(false);
   }
 
-  const toggleView = () => {
-    setIsGridView(!isGridView);
+  const setGridView = () => {
+    setIsGridView(true);
+  };
+
+  const setListView = () => {
+    setIsGridView(false);
   };
 
   const handleDropdownChange = (event, setStateFunc) => {
@@ -174,8 +178,10 @@ const Home = ({
           setSelectedPrice={setSelectedPrice}
           sortCriteria={sortCriteria}
           setSortCriteria={setSortCriteria}
-          toggleView={toggleView}
           handleDropdownChange={handleDropdownChange}
+          setGridView={setGridView}
+          setListView={setListView}
+          isGridView={isGridView}
         />
 
         <div className={isGridView ? style.GridContainer : style.listContainer}>

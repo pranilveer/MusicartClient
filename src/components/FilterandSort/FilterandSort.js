@@ -1,13 +1,10 @@
 import React from "react";
-import style from "../../pages/Home/Home.module.css";
+import style from "./FilterandSort.module.css";
 
 import gridIcon from "../../assets/images/grid1.png";
-// import gridIcon2 from "../../assets/images/grid2.png";
+import gridIcon1 from "../../assets/images/grid2.png";
 import listIcon from "../../assets/images/list1.png";
-// import listIcon2 from "../../assets/images/list2.png";
-
-// import { IoGridOutline } from "react-icons/io5";
-// import { FaThList } from "react-icons/fa";
+import listIcon1 from "../../assets/images/list2.png";
 
 const FilterandSort = ({
   selectedHeadphoneType,
@@ -20,25 +17,19 @@ const FilterandSort = ({
   setSelectedPrice,
   sortCriteria,
   setSortCriteria,
-  toggleView,
   handleDropdownChange,
+  isGridView,
+  setGridView,
+  setListView
 }) => {
   return (
     <div className={style.filtersContainer}>
       <div className={style.viewtype}>
-        <div onClick={toggleView} className={style.gridIcon}>
-          <img
-            onClick={toggleView}
-            src={gridIcon}
-            alt="gridIcon"
-          />
+        <div onClick={setGridView} className={style.gridIcon}>
+        <img src={isGridView ? gridIcon1 : gridIcon} alt="Grid View" />
         </div>
-        <div onClick={toggleView} className={style.gridIcon}>
-          <img
-            src={listIcon}
-            alt="listIcon"
-            onClick={toggleView}
-          />
+        <div onClick={setListView} className={style.gridIcon1}>
+        <img src={isGridView ? listIcon : listIcon1} alt="List View" />
         </div>
       </div>
       <div className={style.filterGroupDiv}>
