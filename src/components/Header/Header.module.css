@@ -1,4 +1,4 @@
-.container {
+.headerContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,15 +46,17 @@
   justify-content: space-between;
   align-items: center;
   width: 100vw;
+  height: 100px;
   background: #2e0052;
   max-height: 3rem;
   color: #fff;
   font-size: 0.9rem;
   max-width: 2560px;
+
 }
 
 @media (max-width: 768px){
-  .container{
+  .headerContainer{
     display:none;
   }
 }

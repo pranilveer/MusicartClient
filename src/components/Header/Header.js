@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import phonelogo from "../../assets/logos/phonelogo.svg"
 const Header = ({ isLoggedIn, handleLogout }) => {
     return (
-        <header className={styles.container}>
+        <header className={styles.headerContainer}>
             <div className={styles.headerbody}>
             <div className={styles.contact}>
                 <div className={styles.logo}>
