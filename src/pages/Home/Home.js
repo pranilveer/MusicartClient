@@ -153,7 +153,7 @@ const Home = ({
           handleLogout={handleLogout}
         />
           <div className={style.Banner}>
-          <h2>
+          <h2 className={style.Bannerh2}>
             Grab upto 50% off on <br />
             Selected headphones
           </h2>

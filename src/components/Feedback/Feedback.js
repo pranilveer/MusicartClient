@@ -71,8 +71,10 @@ const Feedback = ({ isOpen, onClose }) => {
             ></textarea>
             {error && <p className={style.error}>{error}</p>}
           </div>
-          <button type="submit" className={style.feedbackModalSubmitButton}>
+          <button type="submit" class={style.pushable}>
+            <span class={style.front}>
             Submit
+            </span>
           </button>
         </form>
       </div>

@@ -169,8 +169,8 @@ body {
   background-color: #fff;
   border-radius: 50%;
   position: fixed;
-  right: 7rem;
-  bottom: 0.5rem;
+  right: 2rem;
+  bottom: 1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   z-index: 10;
   display: flex;
@@ -207,7 +207,7 @@ body {
 .Banner h2 {
   font-family: "Roboto", sans-serif;
   font-size: 45px;
-  font-weight: 500px;
+  font-weight: 700;
   color: #2e0052;
   justify-items: flex-start;
   padding-left: 100px;
@@ -348,6 +348,7 @@ body {
 @media screen and (max-width: 876px) {
   .Banner h2 {
     font-size: 35px;
+    font-weight: 600;
   }
 }
 
@@ -383,7 +384,7 @@ body {
     padding-left: 0px;
     text-align: start;
     margin-bottom: 7px;
-
+    font-weight: 600;
   }
 
   .Banner img {
@@ -494,24 +495,22 @@ body {
     display: none;
   }
 
-  .feedbackIcon {
-    position: fixed;
-    bottom: 60px;
-    right: 20px;
-    z-index: 1000;
-    color: #2e0052;
-    background-color: white;
-    font-size: 24px;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  .feedbackContainer {
+    height: 40px;
+    width: 40px;
+    right: 1rem;
+    bottom: 4rem;
   }
+  .feedbackContainer img {
+    width: 20px;
+  }
+
 }
 
-@media screen and (max-width: 371px) {
+@media screen and (max-width: 375px) {
   .Banner h2 {
-    font-size: 15px;
+    font-size: 18px;
+    font-weight: 600;
   }
 
   .BannerContent button {
@@ -523,12 +522,13 @@ body {
 
 @media screen and (max-width: 320px) {
   .Banner h2 {
-    font-size: 12px;
+    font-size: 15px;
+    font-weight: 600;
   }
 
   .BannerContent button {
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 10px;
+    font-size: 8px;
   }
 }

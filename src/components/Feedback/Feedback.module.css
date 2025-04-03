@@ -3,18 +3,17 @@
 .feedbackModal {
     position: fixed;
     z-index: 999;
-    bottom: 70px;
+    bottom: 80px;
     right: 10px;
     overflow: hidden;
     left: calc(50%-20px);
     top: calc(50%-150px);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  
   }
   
   .feedbackModalContent {
     background-color: #fefefe;
-    padding: 15px;
+    padding: 10px;
     width: 250px;
     border-radius: 10px;
     position: relative;
@@ -23,8 +22,10 @@
   .closeButton {
     color: #aaa;
     float: right;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
+    position: relative;
+    bottom: 10px;
   }
   
   .closeButton:hover,
@@ -34,25 +35,19 @@
     cursor: pointer;
   }
   
-  .feedbackModalContent h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
   .feedbackModalContent form div {
     margin-bottom: 10px;
   }
   
   .feedbackModalContent label {
-    display: block;
-    margin-bottom: 5px;
+    display: flex;
+    margin-bottom: 2px;
     text-align: start;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     line-height: 30px;
     text-align: left;
-    color: black;
-  
+    color: black;  
   }
   
   .feedbackModalContent select,
@@ -65,8 +60,12 @@
     resize: vertical;
     background: #F3F3F3;
     color: #919191;
-  
-  
+    font-size: 0.8rem;
+  }
+
+  .feedbackModalContent select{
+    height: 2rem;
+    padding: 2px;
   }
   
   option {
@@ -80,14 +79,13 @@
     width: 100%;
     height: 120px;
     background: #F3F3F3;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: 500;
     line-height: 15px;
     text-align: left;
     padding: 5px;
     resize: none;
-    outline: none;
-  
+    outline: none;  
   }
   
   .error{
@@ -106,26 +104,44 @@
     font-weight: 400;
     font-family: "Roboto", sans-serif;
   }
-  
-  .feedbackModalContent button[type="submit"] {
-    background-color: #2e0052;
-    color: white;
-    padding: 10px 20px;
+
+  .pushable {
+    background: #2e0052;
+    border-radius: 15px;
     border: none;
-    border-radius: 20px;
+    padding: 0;
     cursor: pointer;
+    outline-offset: 4px;
+    padding-top: 4px;
     width: 50%;
-    font-size: 16px;
-  }
-  
-  .feedbackModalContent button[type="submit"]:hover {
-    background-color: #1e0036;
-  }
+    font-weight: 500;
+}
+
+.front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    background: #4f008b;
+    color: white;
+    transform: translateY(-3px);
+    width: 100%;
+}
+
+.pushable:active .front {
+    transform: translateY(-2px);
+}
   
   /* Responsive Styles */
   @media screen and (max-width: 768px) {
-    .feedbackModalContent {
-      width: 80%;
-      margin: 30% auto;
+    .feedbackModal {
+      bottom: 115px;
+      right: 10px;
     }
+
+  .front {
+      font-size: 0.8rem;
+  }
   }
