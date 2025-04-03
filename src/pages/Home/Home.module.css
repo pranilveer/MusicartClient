@@ -21,7 +21,6 @@ body {
 .logoDiv img {
   width: auto;
   height: 40px;
-
 }
 
 .logoDiv h3 {
@@ -232,32 +231,6 @@ body {
   width: 50px;
 }
 
-.searchBar {
-  margin: 10px;
-}
-
-.searchBar input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  margin-top: 1rem;
-  margin-bottom: 10px;
-  border: 3px solid #C8C8C8;
-  border-radius: 20px;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  outline: none;
-  padding-left: 50px;
-  font-size: 16px;
-}
-
-.searchIcon {
-  position: relative;
-  bottom: 44px;
-  right: 48%;
-  font-size: 25px;
-  color: #909090;
-}
-
 .GridContainer {
   margin: 20px;
   padding: 20px;
@@ -428,34 +401,6 @@ body {
     border: none;
     font-size: 12px;
     cursor: pointer;
-  }
-
-  .searchBar {
-    background: #2e0052;
-    margin: 0;
-    padding: 15px 10px;
-    width: auto;
-    height: 50px;
-  }
-
-  .searchBar input[type="text"] {
-    width: 100%;
-    padding: 15px;
-    font-size: 14px;
-    border-radius: 5px;
-    border: none;
-    margin: 0px;
-    padding-left: 46px;
-    font-size: 16px;
-  }
-
-  .searchIcon {
-    position: relative;
-    bottom: 37px;
-    right: 145px;
-    font-size: 25px;
-    color: #909090;
-
   }
 
   .GridContainer,

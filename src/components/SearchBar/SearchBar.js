@@ -1,14 +1,12 @@
 import React from "react";
-import style from "../../pages/Home/Home.module.css";
+import style from "./SearchBar.module.css";
 import { CiSearch } from "react-icons/ci";
 
 const SearchBar = ({ searchQuery, setSearchQuery, handleSearch }) => {
   
   const isMobile = window.innerWidth <= 768; 
   return (
-    <div>
       <div className={style.searchBar}>
-        
         <input
           type="text"
           value={searchQuery}
@@ -20,7 +18,6 @@ const SearchBar = ({ searchQuery, setSearchQuery, handleSearch }) => {
         ></input>
         <CiSearch className={style.searchIcon}/>
       </div>
-    </div>
   );
 };
 
