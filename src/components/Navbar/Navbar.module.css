@@ -60,6 +60,7 @@ body {
     cursor: pointer;
     outline-offset: 4px;
     padding-top: 4px;
+
 }
 
 .front {
@@ -67,7 +68,7 @@ body {
     align-items: center;
     padding: 6px 12px;
     border-radius: 20px;
-    font-size: 1em;
+    font-size: 0.8rem;
     background: #1d7000;
     color: white;
     transform: translateY(-3px);
