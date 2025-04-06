@@ -122,7 +122,7 @@ function App() {
         <Route path="/login" element={<Login onLogin={handleLogin} />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/view" element={<HomeView />}></Route>
-        <Route path='/sucess' element={<Sucesspage/>}></Route>
+        <Route path='/success' element={<Sucesspage/>}></Route>
       </Routes>
       {isMobile&&<BottomNavbar isLoggedIn={isLoggedIn} handleLogout={handleLogout} cartItemCount={cartItemCount}/>}
     </div>

@@ -62,7 +62,7 @@ const Checkout = ({ cartItems, userId,isLoggedIn,handleLogout}) => {
       console.log("Order placed:", response.data);
       setFinalProducts([]);
       console.log('Cart items cleared:', cartItems);
-      navigate("/sucess"); 
+      navigate("/success"); 
     } catch (error) {
       console.error("Error placing order:", error);
     }
