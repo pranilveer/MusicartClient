@@ -1,0 +1,95 @@
+/* src/components/SkeletonCard/SkeletonCard.module.css */
+
+.skeletonCard {
+  width: fit-content;
+  padding: 20px;
+  text-align: start;
+  margin: auto;
+  border-radius: 5px;
+  height: 320px;
+  width: 300px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  animation: pulse 1.2s infinite ease-in-out;
+  }
+  
+  .skeletonImage {
+    width: 180px;
+    height: 180px;
+    border: 2px solid #D4E5FF;
+    border-radius: 5px;
+    margin: auto;
+  }
+  
+  .skeletonText {
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 5px;
+    width: 80%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 6px 0;
+  }
+  
+  .skeletonTextSmall {
+    height: 60px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    width: 60%;
+  }
+  
+  @keyframes pulse {
+    0% {
+      background-color: #eeeeee;
+    }
+    25% {
+      background-color: #e8e8e8;
+    }
+    50% {
+      background-color: #ddd;
+    }
+    75% {
+      background-color: #e8e8e8;
+    }
+    100% {
+      background-color: #eee;
+    }
+  }
+  
+
+  @media screen and (max-width: 630px) {
+    .skeletonCard {
+        width: 100%;
+        padding: 10px;
+        text-align: start;
+        margin: auto;
+        min-height: 330px;
+        height: auto;
+    }
+
+    .skeletonImage {
+        width: 100%;
+        max-width: 250px;
+        width: 100px;
+        height: 100px;
+        border: 2px solid #D4E5FF;
+        border-radius: 5px;
+        margin: auto;
+    }
+    .itemDetails h3 {
+      height: 30px;
+      background-color: #ddd;
+      border-radius: 5px;
+      width: 80%;
+      margin-top: 2rem;    
+    }
+
+    .itemDetails h4 {
+        font-size: 12px;
+        height: 60px;
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        width: 60%;
+        margin-top: 1rem;    
+    }
+}

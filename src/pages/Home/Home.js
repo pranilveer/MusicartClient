@@ -12,6 +12,7 @@ import FilterandSort from "../../components/FilterandSort/FilterandSort";
 import Feedback from "../../components/Feedback/Feedback";
 import feedbackIcon from "../../assets/logos/feedback.svg";
 import { BACKEND_URL } from "../../constants/baseurl";
+import SkeletonGridCard from "../../components/SkeletonGridCard/SkeletonGrid";
 
 
 const Home = ({
@@ -38,13 +39,14 @@ const Home = ({
   const [sortedProducts, setSortedProducts] = useState([]);
 
   const [isGridView, setIsGridView] = useState(true);
+  const [loading, setLoading] = useState(true);
 
-  const [isModalOpen,setIsModalOpen]=useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal=()=>{
+  const openModal = () => {
     setIsModalOpen(!isModalOpen);
   }
-  const closeModal=()=>{
+  const closeModal = () => {
     setIsModalOpen(false);
   }
 
@@ -107,15 +109,19 @@ const Home = ({
     };
     sortProducts();
   }, [sortCriteria]);
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
+        setLoading(true);
         const response = await axios.get(
           `${BACKEND_URL}/api/items/allproducts`
         );
         setProductItems(response.data);
       } catch (error) {
         console.error(error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchProducts();
@@ -125,48 +131,48 @@ const Home = ({
     <div className={style.HomeContainer}>
       <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
       <div className={style.mainContainer}>
-        
-        {isMobile?(
+
+        {isMobile ? (
           <>
-          <SearchBar
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          handleSearch={handleSearch}
-        />
-          <div className={style.Banner}>
-          <div className={style.BannerContent}>
-          <h2>
-            Grab upto 50% off on <br />
-            Selected headphones
-          </h2>
-          <button>Buy Now</button>
-          </div>
-          <img src={image5} alt="HeadsetGirl" />
-        </div>
-        </>
-        ):(
+            <SearchBar
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+              handleSearch={handleSearch}
+            />
+            <div className={style.Banner}>
+              <div className={style.BannerContent}>
+                <h2>
+                  Grab upto 50% off on <br />
+                  Selected headphones
+                </h2>
+                <button>Buy Now</button>
+              </div>
+              <img src={image5} alt="HeadsetGirl" />
+            </div>
+          </>
+        ) : (
           <>
-          <Navbar
-          isLoggedIn={isLoggedIn}
-          userName={userName}
-          cartItemCount={cartItemCount}
-          handleLogout={handleLogout}
-        />
-          <div className={style.Banner}>
-          <h2 className={style.Bannerh2}>
-            Grab upto 50% off on <br />
-            Selected headphones
-          </h2>
-          <img src={image5} alt="HeadsetGirl" />
-        </div>
-        <SearchBar
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          handleSearch={handleSearch}
-        />
-        </>
+            <Navbar
+              isLoggedIn={isLoggedIn}
+              userName={userName}
+              cartItemCount={cartItemCount}
+              handleLogout={handleLogout}
+            />
+            <div className={style.Banner}>
+              <h2 className={style.Bannerh2}>
+                Grab upto 50% off on <br />
+                Selected headphones
+              </h2>
+              <img src={image5} alt="HeadsetGirl" />
+            </div>
+            <SearchBar
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+              handleSearch={handleSearch}
+            />
+          </>
         )}
-        
+
         <FilterandSort
           selectedHeadphoneType={selectedHeadphoneType}
           setSelectedHeadphoneType={setSelectedHeadphoneType}
@@ -185,111 +191,120 @@ const Home = ({
         />
 
         <div className={isGridView ? style.GridContainer : style.listContainer}>
-          {searchQuery.trim() === "" &&
-          selectedHeadphoneType === "" &&
-          selectedCompany === "" &&
-          selectedColor === "" &&
-          selectedPrice === "" &&
-          sortCriteria === "featured" ? (
-            <>
-              {productItems.map((item) => (
-                <div key={item.id}>
-                  {isGridView ? (
-                    <GridItem
-                      item={item}
-                      addtoCart={addtoCart}
-                      userId={userId}
-                    />
-                  ) : (
-                    <ListItem
-                      item={item}
-                      addtoCart={addtoCart}
-                      userId={userId}
-                    />
-                  )}
-                </div>
-              ))}
-            </>
-          ) : searchQuery.trim() === "" ? (
-            <>
-              {selectedHeadphoneType === "" &&
-              selectedCompany === "" &&
-              selectedColor === "" &&
-              selectedPrice === "" ? (
-                <>
-                  {sortedProducts.map((item) => (
-                    <div key={item.id}>
-                      {isGridView ? (
-                        <GridItem
-                          item={item}
-                          addtoCart={addtoCart}
-                          userId={userId}
-                        />
-                      ) : (
-                        <ListItem
-                          item={item}
-                          addtoCart={addtoCart}
-                          userId={userId}
-                        />
-                      )}
-                    </div>
-                  ))}
-                </>
-              ) : (
-                <>
-                  {filteredItems.map((item) => (
-                    <div key={item.id}>
-                      {isGridView ? (
-                        <GridItem
-                          item={item}
-                          addtoCart={addtoCart}
-                          userId={userId}
-                        />
-                      ) : (
-                        <ListItem
-                          item={item}
-                          addtoCart={addtoCart}
-                          userId={userId}
-                        />
-                      )}
-                    </div>
-                  ))}
-                </>
-              )}
-            </>
+          {loading ? (Array.from({ length: 10 }).map((_, index) => (
+            <SkeletonGridCard key={index} />
+          ))
           ) : (
             <>
-              {searchResults.map((item) => (
-                <div key={item.id}>
-                  {isGridView ? (
-                    <GridItem
-                      item={item}
-                      addtoCart={addtoCart}
-                      userId={userId}
-                    />
-                  ) : (
-                    <ListItem
-                      item={item}
-                      addtoCart={addtoCart}
-                      userId={userId}
-                    />
-                  )}
-                </div>
-              ))}
+              {
+                searchQuery.trim() === "" &&
+                  selectedHeadphoneType === "" &&
+                  selectedCompany === "" &&
+                  selectedColor === "" &&
+                  selectedPrice === "" &&
+                  sortCriteria === "featured" ? (
+                  <>
+                    {productItems.map((item) => (
+                      <div key={item.id}>
+                        {isGridView ? (
+                          <GridItem
+                            item={item}
+                            addtoCart={addtoCart}
+                            userId={userId}
+                          />
+                        ) : (
+                          <ListItem
+                            item={item}
+                            addtoCart={addtoCart}
+                            userId={userId}
+                          />
+                        )}
+                      </div>
+                    ))}
+                  </>
+                ) : searchQuery.trim() === "" ? (
+                  <>
+                    {selectedHeadphoneType === "" &&
+                      selectedCompany === "" &&
+                      selectedColor === "" &&
+                      selectedPrice === "" ? (
+                      <>
+                        {sortedProducts.map((item) => (
+                          <div key={item.id}>
+                            {isGridView ? (
+                              <GridItem
+                                item={item}
+                                addtoCart={addtoCart}
+                                userId={userId}
+                              />
+                            ) : (
+                              <ListItem
+                                item={item}
+                                addtoCart={addtoCart}
+                                userId={userId}
+                              />
+                            )}
+                          </div>
+                        ))}
+                      </>
+                    ) : (
+                      <>
+                        {filteredItems.map((item) => (
+                          <div key={item.id}>
+                            {isGridView ? (
+                              <GridItem
+                                item={item}
+                                addtoCart={addtoCart}
+                                userId={userId}
+                              />
+                            ) : (
+                              <ListItem
+                                item={item}
+                                addtoCart={addtoCart}
+                                userId={userId}
+                              />
+                            )}
+                          </div>
+                        ))}
+                      </>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    {searchResults.map((item) => (
+                      <div key={item.id}>
+                        {isGridView ? (
+                          <GridItem
+                            item={item}
+                            addtoCart={addtoCart}
+                            userId={userId}
+                          />
+                        ) : (
+                          <ListItem
+                            item={item}
+                            addtoCart={addtoCart}
+                            userId={userId}
+                          />
+                        )}
+                      </div>
+                    ))}
+                  </>
+                )
+              }
             </>
           )}
         </div>
-        {isLoggedIn?(
+        {isLoggedIn ? (
           <>
-          <div className={style.feedbackContainer} onClick={openModal}>
-                <img src={feedbackIcon} alt="feedback icon" />
+            <div className={style.feedbackContainer} onClick={openModal}>
+              <img src={feedbackIcon} alt="feedback icon" />
             </div>
-          <Feedback  isOpen={isModalOpen} onClose={closeModal}/>
-        </>
-        ):('')}
-        
+            <Feedback isOpen={isModalOpen} onClose={closeModal} />
+          </>
+        ) : ('')}
+
       </div>
-      
+
       <Footer />
     </div>
   );
