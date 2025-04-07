@@ -1,0 +1,97 @@
+.cartIconBody {
+    position: relative;
+    right: 22px;
+    bottom: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.carticon {
+    cursor: pointer;
+    color: #2e0052;
+    margin: auto;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.cartIconBody:hover {
+    transform: scale(1.1);
+}
+  
+  .ListitemContainer {
+    width: fit-content;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 1.2rem;
+    text-align: start;
+    display: flex;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .ListitemContainer img {
+    width: 180px;
+    height: 180px;
+    border: 2px solid #D4E5FF;
+    border-radius: 5px;
+  }
+  
+  .ListitemContainer {
+    padding-left: 20px;
+  }
+  
+  .ListitemContainer h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  
+  .ListitemContainer h4 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .pushable {
+    background: #2e0052;
+    border-radius: 5px;
+    border: none;
+    padding: 0 0px;
+    cursor: pointer;
+    outline-offset: 4px;
+    padding-top: 4px;
+    font-weight: 500;
+}
+
+.front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 40px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    background: #4f008b;
+    color: white;
+    transform: translateY(-3px);
+    width: 100%;
+}
+
+.pushable:active .front {
+    transform: translateY(-2px);
+}
+
+  @media screen and (max-width:1000px) {
+    .carticon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .cartIconBody {
+        width: 35px;
+        height: 35px;
+    }
+  }

@@ -241,6 +241,15 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   column-gap: 10px;
   row-gap: 10px;
+  cursor: pointer;
+}
+.ListContainer {
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  column-gap: 20px;
+  cursor: pointer;
 }
 
 .carticon {
@@ -251,56 +260,6 @@ body {
   background: white;
   color: green;
   border-radius: 25%;
-}
-
-.ListContainer {
-  margin: 20px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  column-gap: 20px;
-}
-
-.ListitemContainer {
-  width: fit-content;
-  padding: 20px;
-  text-align: start;
-  display: flex;
-}
-
-.ListitemContainer img {
-  width: 180px;
-  height: 180px;
-  border: 20px solid #D4E5FF;
-  border-radius: 5px;
-}
-
-.ListitemContainer {
-  padding-left: 20px;
-}
-
-.ListitemContainer h3 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-}
-
-.ListitemContainer h4 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-}
-
-.ListitemContainer button {
-  background: #2e0052;
-  color: white;
-  padding: 6px 30px;
-  cursor: pointer;
-  border: none;
-  border-radius: 20px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
 }
 
 .feedbackIcon {
