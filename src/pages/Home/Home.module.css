@@ -220,8 +220,6 @@ body {
   height: 200px;
 }
 
-
-
 .listIcon {
   font-size: 30px;
   outline: black;
@@ -369,7 +367,8 @@ body {
   .Banner {
     display: flex;
     width: 98%;
-    margin: 4px;
+    margin: auto;
+    margin-top: 0.3rem;
     height: auto;
     justify-content: space-between;
   }
@@ -402,6 +401,7 @@ body {
     border: none;
     font-size: 12px;
     cursor: pointer;
+    margin-bottom: 0.5rem;
   }
 
   .GridContainer,
@@ -421,7 +421,6 @@ body {
     text-align: start;
     border: 1.13px solid #CECECE;
     border-radius: 6px;
-
   }
 
   .carticon {
@@ -530,5 +529,6 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 8px;
+    margin-bottom: 0.2rem;
   }
 }
