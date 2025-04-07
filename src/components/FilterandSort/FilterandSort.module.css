@@ -87,18 +87,20 @@
 }
 
 .sortSelect {
-    padding: 8px;
+    padding: 7px;
     width: 8.5rem;
     font-size: 14px;
     margin-right: 10px;
     background-color: #ecf0f1;
     color: #2c3e50;
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     font-weight: 600;
     outline: none;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    height: 30px;
+
 }
 
 .sortSelect:hover {
@@ -270,6 +272,7 @@
         padding: 6px;
         font-size: 12px;
         min-width: 100px;
+        height: 25px;
     }
 
     .viewtype {

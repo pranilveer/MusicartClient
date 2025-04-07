@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import style from "../../pages/Home/Home.module.css";
+import style from "./GridItem.module.css";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import axios from "axios";
 import { BACKEND_URL } from "../../constants/baseurl";
@@ -46,7 +46,9 @@ const GridItem = ({ item ,addtoCart,userId}) => {
           alt={item.model}
           onClick={() => handleItem(item._id)}
         />
+        <div className={style.cartIconBody}>
         <MdOutlineAddShoppingCart className={style.carticon}onClick={handleCart}/>
+        </div>
         <div className={style.itemDetails}>
           <h3>{item.name}</h3>
           <h4>Price - ₹{item.price}</h4>
