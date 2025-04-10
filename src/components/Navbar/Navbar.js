@@ -5,7 +5,6 @@ import style from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
-
 const Navbar = ({ isLoggedIn, userName, cartItemCount, handleLogout }) => {
     const location = useLocation();
     const { pathname } = location;
@@ -31,65 +30,67 @@ const Navbar = ({ isLoggedIn, userName, cartItemCount, handleLogout }) => {
     };
 
     return (
-        <div className={style.navbar}>
-            {isMobile ? (
-                <div className={style.mobileNavbar}>
-                    <img src={image4} alt="musiclogo" />
-                    <h3>Musicart</h3>
-                </div>
-            ) : (
-                <div className={style.logoDiv}>
-                    <div className={style.musiclogo}>
-                        <img src={image4} alt="logo"></img>
+        <>
+            <div className={style.navbar}>
+                {isMobile ? (
+                    <div className={style.mobileNavbar}>
+                        <img src={image4} alt="musiclogo" />
                         <h3>Musicart</h3>
-                        <div className={style.linksLeft}>
-                            {pathname === "/" && (
-                                <>
-                                    <h4>Home</h4>
-                                    <h4>
-                                        <Link to="/invoices" className={style.linkinvoice}>
-                                            Invoice
-                                        </Link>
-                                    </h4>
-                                </>
-                            )}
-                            {pathname === "/cart" && <h4>Home/viewCart</h4>}
-                            {pathname === "/checkout" && <h4>Home/Checkout</h4>}
-                            {pathname === "/invoices" && <h4>Home/invoices</h4>}
-                        </div>
                     </div>
-                    <div className={style.navLinks}>
-                        {isLoggedIn && userName && (
-                            <button class={style.pushable}>
-                                <span class={style.front}>
-                                <IoCartOutline className={style.cartIcon} />
-                                <Link to="/cart" className={style.linkstyle}>
-                                    View Cart {cartItemCount}
-                                </Link>
-                                </span>
-                            </button>
-                        )}
-
-                        <div className={style.userContainer}>
-
+                ) : (
+                    <div className={style.logoDiv}>
+                        <div className={style.musiclogo}>
+                            <img src={image4} alt="logo"></img>
+                            <h3>Musicart</h3>
+                            <div className={style.linksLeft}>
+                                {pathname === "/" && (
+                                    <>
+                                        <h4>Home</h4>
+                                        <h4>
+                                            <Link to="/invoices" className={style.linkinvoice}>
+                                                Invoice
+                                            </Link>
+                                        </h4>
+                                    </>
+                                )}
+                                {pathname === "/cart" && <h4>Home/viewCart</h4>}
+                                {pathname === "/checkout" && <h4>Home/Checkout</h4>}
+                                {pathname === "/invoices" && <h4>Home/invoices</h4>}
+                            </div>
+                        </div>
+                        <div className={style.navLinks}>
                             {isLoggedIn && userName && (
-                                <div className={style.userInitial} onClick={handleDropdownToggle}>
-                                    <h3>{getInitials(userName).toUpperCase()}</h3>
-                                </div>
+                                <button class={style.pushable}>
+                                    <span class={style.front}>
+                                        <IoCartOutline className={style.cartIcon} />
+                                        <Link to="/cart" className={style.linkstyle}>
+                                            View Cart {cartItemCount}
+                                        </Link>
+                                    </span>
+                                </button>
                             )}
-                            {dropdownOpen && isLoggedIn && (
-                                <div className={style.dropdownContent}>
-                                    <p>{userName}</p>
-                                    <button onClick={handleLogout} className={style.logoutButton}>
-                                        Logout
-                                    </button>
-                                </div>
-                            )}
+
+                            <div className={style.userContainer}>
+
+                                {isLoggedIn && userName && (
+                                    <div className={style.userInitial} onClick={handleDropdownToggle}>
+                                        <h3>{getInitials(userName).toUpperCase()}</h3>
+                                    </div>
+                                )}
+                                {dropdownOpen && isLoggedIn && (
+                                    <div className={style.dropdownContent}>
+                                        <p>{userName}</p>
+                                        <button onClick={handleLogout} className={style.logoutButton}>
+                                            Logout
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
-        </div>
+                )}
+            </div>
+        </>
     );
 };
 
