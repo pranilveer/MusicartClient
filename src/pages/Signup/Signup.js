@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { BACKEND_URL } from "../../constants/baseurl";
 
 const SignUp = () => {
- 
+  const [isSignUp, setIsSignUp] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -19,12 +19,12 @@ const SignUp = () => {
 
   const [formErrors, setFormErrors] = useState({
     name: false,
-    mobile:false,
+    mobile: false,
     email: false,
     password: false,
   });
 
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,36 +53,30 @@ const SignUp = () => {
   };
 
   const handleSubmit = async (e) => {
-
-
     e.preventDefault();
+    setIsSignUp(true);
 
     const hasErrors = Object.values(formErrors).some((error) => error);
     if (hasErrors) {
       console.log("Form has errors. Please correct them.");
       return;
     }
-    
+
     try {
       const response = await axios.post(
         `${BACKEND_URL}/api/auth/signup`,
         formData
       );
-      navigate('/login');
+      navigate('/');
       console.log(response.data);
     } catch (error) {
       console.error(error);
+    } finally{
+      setIsSignUp(false);
     }
-
     console.log(formData);
-    
-    }
-  
-      
-    
-     
-    
-  
+  }
+
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -104,12 +98,13 @@ const SignUp = () => {
 
 
   return (
+    <div className={style.signupBody}>
     <div className={style.signupContainer}>
       <div className={style.musiclogo}>
-        <img src={image4} alt="logo"/>
+        <img src={image4} alt="logo" />
         <h3>Musicart</h3>
       </div>
-      
+
       <div className={style.mainContainer}>
         <h2>Create Account</h2>
         <form onSubmit={handleSubmit} className={style.formContainer}>
@@ -122,7 +117,7 @@ const SignUp = () => {
               onChange={handleChange}
               className={formErrors.name ? style.error : ""}
             ></input>
-             {formErrors.name && (
+            {formErrors.name && (
               <span className={style.errorMsg}>Invalid name format</span>
             )}
           </div>
@@ -161,7 +156,7 @@ const SignUp = () => {
               onChange={handleChange}
               className={formErrors.password ? style.error : ""}
             ></input>
-          {formErrors.password && (
+            {formErrors.password && (
               <span className={style.errorMsg}>
                 Password must be at least 6 characters long
               </span>
@@ -173,7 +168,7 @@ const SignUp = () => {
               automated security notifications via text message form
               musicart,Message and data rates may apply
             </p>
-            <button type="submit">Continue</button>
+            <button type="submit">{isSignUp? "Loading..." : "Continue"}</button>
             <p className={style.para}>
               By continuing ,you agree to Musicart privacy notice and conditions
               of use
@@ -184,6 +179,7 @@ const SignUp = () => {
       <h3>
         Already have an account? <Link to="/login">Sign in</Link>
       </h3>
+      </div>
       <Footer />
     </div>
   );

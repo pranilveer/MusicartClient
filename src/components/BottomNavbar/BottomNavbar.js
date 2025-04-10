@@ -17,6 +17,11 @@ const BottomNavbar = ({ isLoggedIn, handleLogout, cartItemCount }) => {
         setLogoutModalOpen(true);
     }
 
+    const performLogout = () => {
+        handleLogout();
+        setLogoutModalOpen(false);
+    };
+
     const handleNavigation = (path) => {
         setActiveTab(path);
         navigate(path);
@@ -56,7 +61,7 @@ const BottomNavbar = ({ isLoggedIn, handleLogout, cartItemCount }) => {
             <Logout
                 isOpen={logoutModalOpen}
                 closeModal={() => setLogoutModalOpen(false)}
-                handleLogout={handleLogout}
+                handleLogout={performLogout}
             />
         </>
     );

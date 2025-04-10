@@ -11,6 +11,10 @@ const Header = ({ isLoggedIn, handleLogout }) => {
     const confirmLogout = () =>{
         setLogoutModalOpen(true);
     }
+    const performLogout = () => {
+        handleLogout();
+        setLogoutModalOpen(false);
+    };
 
     return (
         <>
@@ -50,7 +54,7 @@ const Header = ({ isLoggedIn, handleLogout }) => {
             <Logout
                 isOpen={logoutModalOpen}
                 closeModal={() => setLogoutModalOpen(false)}
-                handleLogout={handleLogout}
+                handleLogout={performLogout}
             />
         </>
     );
