@@ -162,48 +162,78 @@ input[type="password"] {
     border: 1px solid #b6b6b6;
   }
 
+  .mainContainer h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    text-align: start;
+    font-weight: 400;
+    color: black;
+    line-height: 30px;
+    margin-bottom: 0.5rem;
+  }
+
   .loginContainer {
     color: black;
     height: 100%;
-    width: 400px;
+    width: 90%;
     margin: auto;
     height: 500px;
-    display: flex;
-    flex-direction: column;
+    display: block;
   }
 
-}
-
-/* 
-@media screen and (max-width: 600px) {
   .mainContainer {
-    width: 80%;
-    padding: 0 20px;
+    width: 90%;
+    max-width: auto;
+    padding: 10px 20px;
   }
 
-  .mainContainer h2 {
-    font-size: 20px;
-    line-height: 24px;
+  .musiclogo{
+    margin-bottom: 1rem;
+    
+  }
+
+  .musiclogo img{
+      width: 40px;
+      margin-right: 0.5rem;
+  }
+
+  .musiclogo h3{
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .formContainer button {
+    width: 100%;
+    padding: 8px 20px;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .lookDown {
+    width: 90%;
+    max-width: auto;
+    margin: auto;
   }
 
   .text_Container {
-    margin-bottom: 10px;
-  }
-
-  .text_Container .text {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
   }
 
   .text_Container .line {
     width: 25%;
+    border-top: 2px solid #ccc;
   }
 
   .lookDown button {
     width: 100%;
-    font-size: 16px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    padding: 8px 10px;
+    font-size: 14px;
   }
-} */
+
+}
