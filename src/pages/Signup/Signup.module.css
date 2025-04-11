@@ -194,5 +194,6 @@ input[type="password"] {
 
   span{
     font-weight: 600;
+    cursor: pointer;
   }
 }
