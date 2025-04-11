@@ -166,19 +166,18 @@ const SignUp = () => {
             <p>
               By enrolling your mobile phone number ,you consent to receive
               automated security notifications via text message form
-              musicart,Message and data rates may apply
+              musicart.
             </p>
             <button type="submit">{isSignUp? "Loading..." : "Continue"}</button>
             <p className={style.para}>
-              By continuing ,you agree to Musicart privacy notice and conditions
-              of use
+              By continuing you agree to Musicart privacy notice and conditions
             </p>
           </div>
         </form>
       </div>
-      <h3>
-        Already have an account? <Link to="/login">Sign in</Link>
-      </h3>
+      <h4>
+        Already have an account? <span><Link to="/login">Sign in</Link></span>
+      </h4>
       </div>
       <Footer />
     </div>
